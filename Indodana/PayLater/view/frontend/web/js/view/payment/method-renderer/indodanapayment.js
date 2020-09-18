@@ -103,7 +103,7 @@ define(
                 var ptype=window.checkoutConfig.payment.indodanapayment.paytype;
                 this.redirectAfterPlaceOrder = false;
                 var strurl =url.build('indodanapayment/index/redirectto')
-/*
+
                 $.ajax({
                     type: "POST",
                     url: strurl,
@@ -113,7 +113,7 @@ define(
                         window.location.replace(window.checkoutConfig.payment.indodanapayment.redirecturl);
                     },
                   });
-                  */
+                  
             }
         });
     }
