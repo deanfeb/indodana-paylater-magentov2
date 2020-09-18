@@ -105,15 +105,16 @@ define(
                 var strurl =url.build('indodanapayment/index/redirectto')
 
                 $.ajax({
+                    //async:true,
                     type: "POST",
                     url: strurl,
                     data: {paytype:ptype},
-                    success: function(data){
+                    success: function(data){                        
                         window.checkoutConfig.payment.indodanapayment.redirecturl=data.Order;
                         window.location.replace(window.checkoutConfig.payment.indodanapayment.redirecturl);
                     },
                   });
-                  
+                  return true;
             }
         });
     }

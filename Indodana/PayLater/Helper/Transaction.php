@@ -222,9 +222,9 @@ class Transaction extends AbstractHelper implements IndodanaInterface
   }
 
   public function checkOut($order,$paytype){
-    $approvedNotificationUrl = $this->_urlInterface->getUrl('indodanapayment/index/notify'); 
+    $approvedNotificationUrl = $this->_urlInterface->getUrl('rest/V1/indodanapayment') .'notify/'; 
     $cancellationRedirectUrl = $this->_urlInterface->getUrl('indodanapayment/index/cancel');
-    $backToStoreUrl = $this->_helper->getStoreUrl();
+    $backToStoreUrl = $this->_urlInterface->getUrl('checkout/onepage/success'); //$this->_helper->getStoreUrl();
 
     /// <!-- Development Mode
     $approvedNotificationUrl = str_replace('localhost','192.168.1.10',$approvedNotificationUrl);

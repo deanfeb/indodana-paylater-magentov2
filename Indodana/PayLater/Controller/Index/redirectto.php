@@ -42,7 +42,7 @@ class Redirectto extends \Magento\Framework\App\Action\Action
     public function getRealOrderId()
     {
         $lastorderId = $this->_checkoutSession->getLastOrderId();
-        
+                       
         return $lastorderId;
     }
 
