@@ -33,7 +33,7 @@
       "Indodana/PayLater/registrations.php"
     ],
     "psr-4": {
-      "Indodana\\PayLater":"plugin/"
+      "Indodana\\PayLater\\":"Indodana/"
     }
   }
 }
