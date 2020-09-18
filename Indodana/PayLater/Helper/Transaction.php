@@ -245,7 +245,8 @@ class Transaction extends AbstractHelper implements IndodanaInterface
        'shippingAddress'         => $this->getShippingAddress($order),
        'approvedNotificationUrl' => $approvedNotificationUrl,
        'cancellationRedirectUrl' => $cancellationRedirectUrl,
-       'backToStoreUrl'          => $backToStoreUrl 
+       'backToStoreUrl'          => $backToStoreUrl,
+       'paymentType'              => $paytype  
        ]
      );
   }
