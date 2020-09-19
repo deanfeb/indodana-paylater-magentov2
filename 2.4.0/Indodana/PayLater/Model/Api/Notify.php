@@ -7,6 +7,7 @@ use IndodanaCommon\IndodanaConstant;
 use IndodanaCommon\IndodanaLogger;
 use IndodanaCommon\IndodanaHelper;
 use IndodanaCommon\MerchantResponse;
+use Indodana\PayLater\Helper\Transaction;
 
 class Notify implements \Indodana\PayLater\Api\NotifyInterface
 {
@@ -139,7 +140,7 @@ class Notify implements \Indodana\PayLater\Api\NotifyInterface
         }  
     
         $transactionStatus = $requestBody['transactionStatus'];
-        $orderId = str_replace('KK','',$requestBody['merchantOrderId']);      
+        $orderId = str_replace(Transaction::PREVIX_ORDERID,'',$requestBody['merchantOrderId']);      
         $order= $this->_order->get($orderId);  
 
         IndodanaLogger::info(

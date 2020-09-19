@@ -16,6 +16,7 @@ class Transaction extends AbstractHelper implements IndodanaInterface
   protected $_dir;
   protected $objectManager; 
   protected $imageHelperFactory;
+  public const PREVIX_ORDERID='M240';
 
   public function __construct(
     Data $helper,
@@ -234,7 +235,7 @@ class Transaction extends AbstractHelper implements IndodanaInterface
 
     return $this->getIndodanaCommon()->checkout(
        [      
-       'merchantOrderId'         => $order->getId(),
+       'merchantOrderId'         => Transaction::PREVIX_ORDERID . $order->getId(),
        'totalAmount'             => $this->getTotalAmount($order),
        'discountAmount'          => $this->getTotalDiscountAmount($order),
        'shippingAmount'          => $this->getTotalShippingAmount($order),
