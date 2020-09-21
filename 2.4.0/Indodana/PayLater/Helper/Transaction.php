@@ -66,6 +66,16 @@ class Transaction extends AbstractHelper implements IndodanaInterface
     return (float) $order->getGrandTotal();
   }
 
+  public function getMinimumTotalAmount()
+  {
+    return (float) 10000;
+  }
+  public function getOrderCurrencyCode($order)
+  {
+    return $order->getOrderCurrencyCode();
+  }  
+
+
   public function getTotalDiscountAmount($order)
   {
     $totalDiscountAmount = 0;

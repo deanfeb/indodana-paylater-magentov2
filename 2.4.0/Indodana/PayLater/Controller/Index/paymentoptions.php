@@ -29,11 +29,13 @@ class paymentoptions extends \Magento\Framework\App\Action\Action
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $cart = $objectManager->get('\Magento\Checkout\Model\Cart');         
         $Installment=$this->_transaction->getInstallmentOptions($cart->getQuote());
-        
+        $passMinAmount = $this->_transaction->getMinimumTotalAmount() < $this->_transaction->getTotalAmount($cart->getQuote());
         return $result->setData(
             [
                 'Installment' => $Installment,
-                'OrderID' => $cart->getQuote()->getId()
+                'OrderID' => $cart->getQuote()->getId(),
+                'CurCode' => $this->_transaction->getOrderCurrencyCode($cart->getQuote()),
+                'PassMinAmount' => $passMinAmount 
             ]
             );    
     }

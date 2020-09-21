@@ -48,6 +48,7 @@ define(
                         'paytype': this.paytype(),
                         'installment':this.installment(),
                         'redirecturl':this.redirecturl()
+                        
                     }
                 };
             },
@@ -84,6 +85,11 @@ define(
 
                             window.checkoutConfig.payment.indodanapayment.installment=data.Installment;
                             window.checkoutConfig.payment.indodanapayment.OrderID=data.OrderID;
+                            window.checkoutConfig.payment.indodanapayment.PassMinAmount=data.PassMinAmount;
+
+                            window.checkoutConfig.payment.indodanapayment.installment.forEach(function (d){
+                                d.monthlyInstallment=data.CurCode +' '+  d.monthlyInstallment.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+                            });
                         },
                         //dataType: dataType
                     });
