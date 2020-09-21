@@ -32,8 +32,8 @@ class paymentoptions extends \Magento\Framework\App\Action\Action
         $passMinAmount = $this->_transaction->getMinimumTotalAmount() < $this->_transaction->getTotalAmount($cart->getQuote());
         $products = $this->_transaction->getProducts($cart->getQuote());
         $passMaxPrice =true;
-        foreach($Installment as $product) {
-            if($product->price > 25000000){
+        foreach($products as $product) {
+            if($product['price'] > 25000000){
                 $passMaxPrice=false;                    
             }
         }
