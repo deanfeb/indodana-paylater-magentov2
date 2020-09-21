@@ -16,6 +16,8 @@ class Transaction extends AbstractHelper implements IndodanaInterface
   protected $_dir;
   protected $objectManager; 
   protected $imageHelperFactory;
+  protected $_storeManager;
+  protected $_currency;  
   public const PREVIX_ORDERID='M235';
 
   public function __construct(
@@ -23,7 +25,9 @@ class Transaction extends AbstractHelper implements IndodanaInterface
     \Magento\Customer\Api\CustomerRepositoryInterface $customerRepositoryInterface,
     \Magento\Framework\UrlInterface $urlInterface,
     \Magento\Framework\App\Filesystem\DirectoryList $directoryList,
-    \Magento\Catalog\Helper\ImageFactory $imageHelperFactory
+    \Magento\Catalog\Helper\ImageFactory $imageHelperFactory,
+    \Magento\Store\Model\StoreManagerInterface $storeManager,
+    \Magento\Directory\Model\Currency $currency      
     )
   {
           $this->_helper = $helper;
@@ -31,6 +35,8 @@ class Transaction extends AbstractHelper implements IndodanaInterface
           $this->_urlInterface = $urlInterface;
           $this->_dir = $directoryList;
           $this->imageHelperFactory = $imageHelperFactory;
+          $this->_storeManager = $storeManager;
+          $this->_currency = $currency; 
           $this->objectManager = \Magento\Framework\App\ObjectManager::getInstance();
           
           /// use by indodana logger
@@ -70,9 +76,9 @@ class Transaction extends AbstractHelper implements IndodanaInterface
   {
     return (float) 10000;
   }
-  public function getOrderCurrencyCode($order)
+  public function getOrderCurrencyCode()
   {
-    return $order->getOrderCurrencyCode();
+     return $this->_storeManager->getStore()->getCurrentCurrencyCode();
   }  
 
 

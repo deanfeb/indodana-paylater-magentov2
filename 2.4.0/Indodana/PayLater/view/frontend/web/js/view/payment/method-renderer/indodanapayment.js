@@ -96,6 +96,13 @@ define(
                 }
                 return window.checkoutConfig.payment.indodanapayment.installment;                
             },
+            beforeselectPaymentMethod : function(){
+                if(eval(window.checkoutConfig.payment.indodanapayment.PassMinAmount)){
+                    alert('Total Amount tidak memenuhi minimum order ');
+                    return false;
+                }
+                return this.selectPaymentMethod();
+            },
             beforePlaceOrder:function(data, event){
                 if(window.checkoutConfig.payment.indodanapayment.paytype==''){
                     alert('Silahkan pilih tenor cicilan');
@@ -104,7 +111,6 @@ define(
                 if(eval(window.checkoutConfig.payment.indodanapayment.PassMinAmount)){
                     alert('Total Amount tidak memenuhi minimum order ');
                     return false;
-
                 }
                   return this.placeOrder(data,event);
             }
