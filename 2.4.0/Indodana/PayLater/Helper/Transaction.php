@@ -16,7 +16,7 @@ class Transaction extends AbstractHelper implements IndodanaInterface
   protected $_dir;
   protected $objectManager; 
   protected $imageHelperFactory;
-  public const PREVIX_ORDERID='M240';
+  public const PREVIX_ORDERID='M235';
 
   public function __construct(
     Data $helper,
