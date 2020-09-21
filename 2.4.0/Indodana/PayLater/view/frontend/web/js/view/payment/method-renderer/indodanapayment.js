@@ -101,6 +101,11 @@ define(
                     alert('Silahkan pilih tenor cicilan');
                     return false;
                 }
+                if(eval(window.checkoutConfig.payment.indodanapayment.PassMinAmount)){
+                    alert('Total Amount tidak memenuhi minimum order ');
+                    return false;
+
+                }
                   return this.placeOrder(data,event);
             }
 
