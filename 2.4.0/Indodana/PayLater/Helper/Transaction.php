@@ -18,6 +18,9 @@ class Transaction extends AbstractHelper implements IndodanaInterface
   protected $imageHelperFactory;
   protected $_storeManager;
   protected $_currency;  
+
+  /// to make uniq order id between magento 2.3.5 and 2.4.0
+  /// due to the same configuration (store id, apikey & secret key)
   public const PREVIX_ORDERID='M235';
 
   public function __construct(
@@ -46,7 +49,6 @@ class Transaction extends AbstractHelper implements IndodanaInterface
             mkdir(INDODANA_LOG_DIR, 0777, true);
           }
 
-          //require_once($this->_dir->getPath(DirectoryList::APP). '/code/Indodana/PayLater/autoload.php' );
   }
 
   public function getIndodanaCommon()
