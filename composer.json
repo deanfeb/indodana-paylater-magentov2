@@ -15,7 +15,7 @@
   "repositories": [
     {
       "type": "path",
-      "url": "../../../../packages/common",
+      "url": "packages/common",
       "options": {
         "symlink": true
       }
@@ -26,10 +26,10 @@
   },
   "autoload": {
     "files": [
-      "registrations.php"
+      "app/code/Indodana/PayLater/registrations.php"
     ],
     "psr-4": {
-      "Indodana\\PayLater\\":""
+      "Indodana\\PayLater\\":"app/code/Indodana/PayLater"
     }
   }
 }
