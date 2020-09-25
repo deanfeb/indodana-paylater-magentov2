@@ -259,6 +259,9 @@ class Transaction extends AbstractHelper implements IndodanaInterface
        'discountAmount'          => $this->getTotalDiscountAmount($order),
        'shippingAmount'          => $this->getTotalShippingAmount($order),
        'taxAmount'               => $this->getTotalTaxAmount($order),
+       'adminFeeAmount'          => 0,
+       'insuranceFeeAmount'      => 0,
+       'additionalFeeAmount'     => $roundAmount,
        'products'                => $this->getProducts($order),
        'customerDetails'         => $this->getCustomerDetails($order),
        'billingAddress'          => $this->getBillingAddress($order),
@@ -266,10 +269,7 @@ class Transaction extends AbstractHelper implements IndodanaInterface
        'approvedNotificationUrl' => $approvedNotificationUrl,
        'cancellationRedirectUrl' => $cancellationRedirectUrl,
        'backToStoreUrl'          => $backToStoreUrl,
-       'paymentType'             => $paytype  ,
-       'adminFeeAmount'          => 0,
-       'insuranceFeeAmount'      => 0,
-       'additionalFeeAmount'     => $roundAmount
+       'paymentType'             => $paytype  
        ]
      );
   }
