@@ -13,10 +13,12 @@
         <label class="label" data-bind="attr: {'for': getCode()}">
             <span data-bind="text: getTitle()"></span>
         </label>
-        <img height="100px" data-bind="attr: {src: getLogoUrl()}" />
-    </div>
-    <div id="dvmsgIndodana" style="visibility: hidden;">
-        <label>Nilai transaksi Anda tidak sesuai dengan ketentuan penggunaan Indodana Paylater </label>
+        <img style="height:20px ;" data-bind="attr: {src: getLogoUrl()}" />
+        <div id="dvmsgIndodana">
+            <br>
+            <label style="color:red;">Nilai transaksi Anda tidak sesuai dengan ketentuan penggunaan Indodana Paylater </label>
+        </div>
+    
     </div>
 
     <div class="payment-method-content">

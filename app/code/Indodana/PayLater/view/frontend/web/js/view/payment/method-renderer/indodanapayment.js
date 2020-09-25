@@ -91,6 +91,7 @@ define(
                             window.checkoutConfig.payment.indodanapayment.installment.forEach(function (d){
                                 d.monthlyInstallment=data.CurCode +' '+  d.monthlyInstallment.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
                             });
+                            $('#dvmsgIndodana').hide();
                             if(window.checkoutConfig.payment.indodanapayment.PassMinAmount==false){
                                 $('#dvmsgIndodana').show();
                                 $("#indodanapayment").prop('disabled', true);
