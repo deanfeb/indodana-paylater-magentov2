@@ -251,7 +251,7 @@ class Transaction extends AbstractHelper implements IndodanaInterface
     /// -->
 
     $roundAmount = round($this->getTotalAmount($order)) - $this->getTotalAmount($order);
-    $roundAmount =round($roundAmount,2);
+    $roundAmount = round($roundAmount,2);
 
     return $this->getIndodanaCommon()->checkout(
        [      
