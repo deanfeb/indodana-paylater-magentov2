@@ -22,7 +22,7 @@
     }
   ],
   "require": {
-    "deanfeb/indodana-paylater-ecommerce-common"
+    "deanfeb/indodana-paylater-ecommerce-common": "dev"
   },
   "autoload": {
     "files": [
