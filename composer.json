@@ -34,5 +34,6 @@
       "IndodanaCommon\\":"packages/src/",
       "Indodana\\PayLater\\":"app/code/Indodana/PayLater"
     }
-  }
+  },
+  "minimum-stability": "dev"
 }
