@@ -27,9 +27,6 @@
     
   },
   "autoload": {
-    "files": [
-      "app/code/Indodana/PayLater/registrations.php"
-    ],
     "psr-4": {
       "IndodanaCommon\\":"packages/src/",
       "Indodana\\PayLater\\":"app/code/Indodana/PayLater"

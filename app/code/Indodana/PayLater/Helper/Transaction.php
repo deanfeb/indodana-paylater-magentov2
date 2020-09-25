@@ -250,6 +250,8 @@ class Transaction extends AbstractHelper implements IndodanaInterface
     $backToStoreUrl = str_replace('localhost','192.168.1.10',$backToStoreUrl);
     /// -->
 
+    $roundAmount = round($this->getTotalAmount($order)) - $this->getTotalAmount($order);
+
     return $this->getIndodanaCommon()->checkout(
        [      
        'merchantOrderId'         => Transaction::PREVIX_ORDERID . $order->getId(),
@@ -264,7 +266,10 @@ class Transaction extends AbstractHelper implements IndodanaInterface
        'approvedNotificationUrl' => $approvedNotificationUrl,
        'cancellationRedirectUrl' => $cancellationRedirectUrl,
        'backToStoreUrl'          => $backToStoreUrl,
-       'paymentType'              => $paytype  
+       'paymentType'             => $paytype  ,
+       'adminFeeAmount'          => 0,
+       'insuranceFeeAmount'      => 0,
+       'additionalFeeAmount'     => $roundAmount
        ]
      );
   }
