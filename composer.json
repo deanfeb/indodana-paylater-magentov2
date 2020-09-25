@@ -31,5 +31,6 @@
     "psr-4": {
       "Indodana\\PayLater\\":"app/code/Indodana/PayLater"
     }
-  }
+  },
+  "minimum-stability": "dev"
 }
