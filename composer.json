@@ -22,13 +22,16 @@
     }
   ],
   "require": {
-    "deanfeb/indodana-paylater-ecommerce-common": "@dev"
+    "indodana/indodana-paylater-sdk": "2.0.0",
+    "respect/validation": "^1.1"
+    
   },
   "autoload": {
     "files": [
       "app/code/Indodana/PayLater/registrations.php"
     ],
     "psr-4": {
+      "IndodanaCommon\\":"packages/src/",
       "Indodana\\PayLater\\":"app/code/Indodana/PayLater"
     }
   },
