@@ -86,27 +86,34 @@ define(
                             window.checkoutConfig.payment.indodanapayment.installment=data.Installment;
                             window.checkoutConfig.payment.indodanapayment.OrderID=data.OrderID;
                             window.checkoutConfig.payment.indodanapayment.PassMinAmount=data.PassMinAmount;
-                            window.checkoutConfig.payment.indodanapayment.PassMaxItemPrice=data.PassMaxItemPrice;                            
-
-                            window.checkoutConfig.payment.indodanapayment.installment.forEach(function (d){
-                                d.monthlyInstallment=data.CurCode +' '+  d.monthlyInstallment.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
-                            });
+                            window.checkoutConfig.payment.indodanapayment.PassMaxItemPrice=data.PassMaxItemPrice;  
+                            window.checkoutConfig.payment.indodanapayment.ErrMsg=data.ErrMsg;
                             $('#dvmsgIndodana').hide();
-                            if(window.checkoutConfig.payment.indodanapayment.PassMinAmount==false){
+                            if (data.IsError==true){
                                 $('#dvmsgIndodana').show();
-                                $("#indodanapayment").prop('disabled', true);
+                            } else{
+                                window.checkoutConfig.payment.indodanapayment.installment.forEach(function (d){
+                                    d.monthlyInstallment=data.CurCode +' '+  d.monthlyInstallment.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+                                });    
+                                if(window.checkoutConfig.payment.indodanapayment.PassMinAmount==false){
+                                    $('#dvmsgIndodana').show();
+                                    $("#indodanapayment").prop('disabled', true);
+                                }
+                                if(window.checkoutConfig.payment.indodanapayment.PassMaxItemPrice==false){
+                                    $('#dvmsgIndodana').show();
+                                    $("#indodanapayment").prop('disabled', true);
+                                }                
+    
                             }
-                            if(window.checkoutConfig.payment.indodanapayment.PassMaxItemPrice==false){
-                                $('#dvmsgIndodana').show();
-                                $("#indodanapayment").prop('disabled', true);
-                            }                
-            
                         },
                         //dataType: dataType
                     });
                 }
                 return window.checkoutConfig.payment.indodanapayment.installment;                
             },
+            getErrMsg:function(){
+                return window.checkoutConfig.payment.indodanapayment.ErrMsg;
+            }
             beforeselectPaymentMethod : function(){
                 if(window.checkoutConfig.payment.indodanapayment.PassMinAmount==false){
                     $('#dvmsgIndodana').show();
