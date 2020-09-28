@@ -89,7 +89,7 @@ define(
                             window.checkoutConfig.payment.indodanapayment.PassMaxItemPrice=data.PassMaxItemPrice;  
                             window.checkoutConfig.payment.indodanapayment.ErrMsg=data.ErrMsg;
                             $('#dvmsgIndodana').hide();
-                            if (data.IsError==true){
+                            if (data.IsError == true){
                                 $('#dvmsgIndodana').show();
                                 $("#indodanapayment").prop('disabled', true);
                             } else{
@@ -114,7 +114,7 @@ define(
             },
             getErrMsg:function(){
                 return window.checkoutConfig.payment.indodanapayment.ErrMsg;
-            }
+            },
             beforeselectPaymentMethod : function(){
                 if(window.checkoutConfig.payment.indodanapayment.PassMinAmount==false){
                     $('#dvmsgIndodana').show();
