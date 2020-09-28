@@ -1,6 +1,7 @@
 <?php
 
 namespace Indodana\PayLater\Controller\Index;
+use Exception;
 use Indodana\PayLater\Helper\Transaction;
 
 class paymentoptions extends \Magento\Framework\App\Action\Action
@@ -30,6 +31,7 @@ class paymentoptions extends \Magento\Framework\App\Action\Action
         $cart = $objectManager->get('\Magento\Checkout\Model\Cart');         
         $errMsg='Nilai transaksi Anda tidak sesuai dengan ketentuan penggunaan Indodana Paylater';
         $isError = false;
+        $Installment=[];
         try{
             $Installment=$this->_transaction->getInstallmentOptions($cart->getQuote());
         }catch (Exception $e) {
