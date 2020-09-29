@@ -136,7 +136,7 @@ class Transaction extends AbstractHelper implements IndodanaInterface
       $products[] = [
         'id'        => $product->getId(),
         'name'      => $product->getName(),
-        'price'     => (float) $product->getPrice(),
+        'price'     => (float) $product->getFinalPrice(),
         'url'       => $product->getProductUrl(),
         'imageUrl'  => $imageUrl, 
         'type'      => $product->getTypeId(), 
@@ -257,9 +257,9 @@ class Transaction extends AbstractHelper implements IndodanaInterface
        [      
        'merchantOrderId'         => Transaction::PREVIX_ORDERID . $order->getId(),
        'totalAmount'             => ceil($this->getTotalAmount($order)),
-       'discountAmount'          => $this->getTotalDiscountAmount($order),
-       'shippingAmount'          => $this->getTotalShippingAmount($order),
-       'taxAmount'               => $this->getTotalTaxAmount($order),
+       'discountAmount'          => round($this->getTotalDiscountAmount($order),2),
+       'shippingAmount'          => round($this->getTotalShippingAmount($order),2),
+       'taxAmount'               => round($this->getTotalTaxAmount($order),2),
        'adminFeeAmount'          => 0,
        'insuranceFeeAmount'      => 0,
        'additionalFeeAmount'     => $roundAmount,
