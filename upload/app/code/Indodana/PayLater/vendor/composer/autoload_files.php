@@ -7,5 +7,4 @@ $baseDir = dirname($vendorDir);
 
 return array(
     '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => $vendorDir . '/symfony/polyfill-mbstring/bootstrap.php',
-    '7cb0c621097f90d1b2ae5c66c943ba4e' => $baseDir . '/plugin/app/code/Indodana/PayLater/registrations.php',
 );
