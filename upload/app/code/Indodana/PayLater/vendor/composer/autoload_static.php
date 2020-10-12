@@ -4,11 +4,10 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit406aff546b282f053a01d7bf3b27779d
+class ComposerStaticInitfc417aaa1e1fdc990f6fe1bda4c08287
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        '7cb0c621097f90d1b2ae5c66c943ba4e' => __DIR__ . '/../..' . '/plugin/app/code/Indodana/PayLater/registrations.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -22,7 +21,6 @@ class ComposerStaticInit406aff546b282f053a01d7bf3b27779d
         ),
         'I' => 
         array (
-            'Indodana\\PayLater\\' => 18,
             'Indodana\\' => 9,
             'IndodanaCommon\\' => 15,
         ),
@@ -37,10 +35,6 @@ class ComposerStaticInit406aff546b282f053a01d7bf3b27779d
         array (
             0 => __DIR__ . '/..' . '/respect/validation/library',
         ),
-        'Indodana\\PayLater\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/plugin/app/code/Indodana/PayLater',
-        ),
         'Indodana\\' => 
         array (
             0 => __DIR__ . '/..' . '/indodana/indodana-paylater-sdk/src',
@@ -54,8 +48,8 @@ class ComposerStaticInit406aff546b282f053a01d7bf3b27779d
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit406aff546b282f053a01d7bf3b27779d::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit406aff546b282f053a01d7bf3b27779d::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitfc417aaa1e1fdc990f6fe1bda4c08287::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitfc417aaa1e1fdc990f6fe1bda4c08287::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }
