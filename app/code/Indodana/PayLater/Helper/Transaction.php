@@ -1,6 +1,9 @@
 <?php
 
 namespace Indodana\PayLater\Helper;
+
+require_once( dirname(dirname(__FILE__)) . '/vendor/autoload.php');
+
 use IndodanaCommon\IndodanaInterface;
 use IndodanaCommon\IndodanaCommon;
 use IndodanaCommon\IndodanaConstant;
